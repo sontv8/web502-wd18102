@@ -1,0 +1,16 @@
+1. type alias: là một cách để đặt tên lại cho kiểu dữ liệu
+    - primitive type
+    - object type
+
+2. interface: là một cách định nghĩa kiểu dữ liệu cho object
+
+3. các thuộc tính được hỗ trợ trong type và interface 
+    - required
+	- readonly
+	- optional ?
+
+4. union type ( | )
+
+5. intersection type ( & )
+
+6. declaration merging

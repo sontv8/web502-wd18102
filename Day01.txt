@@ -1,0 +1,17 @@
+1.Tổng quan typescript 
+
+- Tại sao phải học Typescript?
+- Cài đặt Typescript như thế nào?
+- Làm sao để thực thi được typescript?
+- Static Type Checking là gì?
+
+2. Type system
+
+- Explicit types (kiểu tường minh)
+- Inferred types (tự nhận biết được kiểu dữ liệu)
+- Literal types (chỉ định một giá trị cụ thể làm kiểu dữ liệu)
+
+
+npm i -g typescript
+npm i -g typescript ts-node ts-lib @types/node
+tsc [ten file ts]
