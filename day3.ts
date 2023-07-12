@@ -21,3 +21,27 @@ getInfo({
     name: 'datlt',
     age: 18
 })
+
+interface Product {
+    id: number,
+    name: string,
+    price: number,
+    status: boolean
+}
+
+const products: Product[] = [
+    { id: 1, name: 'iphone', price: 1000, status: true },
+    { id: 2, name: 'samsung', price: 2000, status: false },
+    { id: 3, name: 'oppo', price: 3000, status: true },
+]
+const addProduct = (newProduct: Product): Product => {
+    products.push(newProduct);
+    return newProduct
+}
+addProduct({ id: 4, name: 'xiaomi', price: 4000, status: true })
+/*
+    sử dụng interface định nghĩa kiểu dữ liệu cho mảng
+    định nghĩa kiểu dữ liệu của tham số truyền vào hàm
+    định nghĩa kiểu dữ liệu trả về của hàm là 
+        object truyền vào 
+*/ 
