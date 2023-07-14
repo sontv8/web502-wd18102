@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ menus }) => {
+    console.log(menus);
     return (
         <header>
             <div>
@@ -8,9 +9,13 @@ const Header = () => {
             </div>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Product</a></li>
+                    {
+                        menus.map((item) => {
+                            return (
+                                <li><a href={item.path}>{item.name}</a></li>
+                            )
+                        })
+                    }
                 </ul>
             </nav>
         </header>
