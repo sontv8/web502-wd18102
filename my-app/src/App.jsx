@@ -9,7 +9,6 @@ import DetailPage from './pages/Detail'
 function App() {
   const [products, setProducts] = useState([]);
 
-
   useEffect(() => {
     fetch('http://localhost:3000/products')
       .then((response) => response.json())
@@ -20,7 +19,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Homepage products={products} />} />
-        <Route path='/detail' element={<DetailPage />} />
+        <Route path='/detail/:id' element={<DetailPage products={products} />} />
       </Routes>
 
     </>

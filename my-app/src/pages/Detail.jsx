@@ -1,8 +1,16 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-const DetailPage = () => {
+
+const DetailPage = ({ products }) => {
+    const { id } = useParams()
+    const currentProduct = products.find((item) => item.id === Number(id))
+    console.log(currentProduct);
     return (
-        <div>DetailPage</div>
+        <div>
+            <h3>{currentProduct?.name}</h3>
+            <p>{currentProduct?.price}</p>
+        </div>
     )
 }
 
