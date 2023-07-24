@@ -3,8 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Homepage from './pages/Homepage'
-import DetailPage from './pages/Detail'
+import { Homepage, DetailPage, Dashboard, ProductPage, AddProduct, UpdateProductPage } from './pages'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -20,6 +19,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage products={products} />} />
         <Route path='/detail/:id' element={<DetailPage products={products} />} />
+        <Route path='/admin' element={<Dashboard />} />
+        <Route path='/admin/product' element={<ProductPage products={products} />} />
+        <Route path='/admin/product/add' element={<AddProduct />} />
+        <Route path='/admin/product/update/:id' element={<UpdateProductPage />} />
       </Routes>
 
     </>
