@@ -18,7 +18,15 @@ function App() {
     fetch(`http://localhost:3000/products/${id}`, {
       method: "DELETE"
     }).then(() => setProducts(products.filter((item) => item.id != id)))
-
+  }
+  const addProduct = (product) => {
+    fetch(`http://localhost:3000/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(product)
+    })
   }
   return (
     <>
@@ -27,7 +35,7 @@ function App() {
         <Route path='/detail/:id' element={<DetailPage products={products} />} />
         <Route path='/admin' element={<Dashboard />} />
         <Route path='/admin/product' element={<ProductPage products={products} removeProduct={removeProduct} />} />
-        <Route path='/admin/product/add' element={<AddProduct />} />
+        <Route path='/admin/product/add' element={<AddProduct addProduct={addProduct} />} />
         <Route path='/admin/product/update/:id' element={<UpdateProductPage />} />
       </Routes>
 
