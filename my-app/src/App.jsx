@@ -28,6 +28,15 @@ function App() {
       body: JSON.stringify(product)
     })
   }
+  const onUpdate = (product) => {
+    fetch(`http://localhost:3000/products/${product.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(product)
+    })
+  }
   return (
     <>
       <Routes>
@@ -36,7 +45,7 @@ function App() {
         <Route path='/admin' element={<Dashboard />} />
         <Route path='/admin/product' element={<ProductPage products={products} removeProduct={removeProduct} />} />
         <Route path='/admin/product/add' element={<AddProduct addProduct={addProduct} />} />
-        <Route path='/admin/product/update/:id' element={<UpdateProductPage />} />
+        <Route path='/admin/product/update/:id' element={<UpdateProductPage onUpdate={onUpdate} products={products} />} />
       </Routes>
 
     </>
