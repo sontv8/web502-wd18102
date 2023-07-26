@@ -18,6 +18,11 @@
     {
       "name": "New Product",
       "id": 4
+    },
+    {
+      "name": "new product ",
+      "price": "1000",
+      "id": 5
     }
   ]
 }
